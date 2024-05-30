@@ -1,0 +1,9 @@
+# ninja log v5
+1	730	7387788027189325	Qtify_autogen/timestamp	7c8f27b37aebc6f6
+1	730	7387788027189325	Qtify_autogen/mocs_compilation.cpp	7c8f27b37aebc6f6
+1	730	7387788027189325	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/timestamp	7c8f27b37aebc6f6
+1	730	7387788027189325	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/mocs_compilation.cpp	7c8f27b37aebc6f6
+730	2225	7387788042727792	CMakeFiles/Qtify.dir/Qtify_autogen/mocs_compilation.cpp.obj	578cd20b13b7ac2e
+734	2283	7387788043306245	CMakeFiles/Qtify.dir/main.cpp.obj	c385ed33ddafd3dd
+732	2305	7387788043535632	CMakeFiles/Qtify.dir/mainwindow.cpp.obj	c6519aefad8ea36a
+2306	2487	7387788045320862	Qtify.exe	302cfa4ab9fd23f8

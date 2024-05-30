@@ -1,0 +1,19 @@
+# ninja log v5
+2	735	7387789287182477	Qtify_autogen/timestamp	4ba9ab9c7c3e1190
+2	735	7387789287182477	Qtify_autogen/mocs_compilation.cpp	4ba9ab9c7c3e1190
+2	735	7387789287182477	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/timestamp	4ba9ab9c7c3e1190
+2	735	7387789287182477	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/mocs_compilation.cpp	4ba9ab9c7c3e1190
+736	2077	7387789301224935	CMakeFiles/Qtify.dir/Qtify_autogen/mocs_compilation.cpp.obj	d02593cdf1ce283e
+738	2104	7387789301494214	CMakeFiles/Qtify.dir/main.cpp.obj	83c461922f23537f
+741	2139	7387789301843280	CMakeFiles/Qtify.dir/mainwindow.cpp.obj	cc33df3d6b5439b7
+2139	2292	7387789303339282	Qtify.exe	502f109a4e07441d
+0	19	0	CMakeFiles/clean.additional	9377104310d8a2a4
+19	26	0	clean	101d0f6048d5fe99
+5	736	7387790689327623	Qtify_autogen/timestamp	4ba9ab9c7c3e1190
+5	736	7387790689327623	Qtify_autogen/mocs_compilation.cpp	4ba9ab9c7c3e1190
+5	736	7387790689327623	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/timestamp	4ba9ab9c7c3e1190
+5	736	7387790689327623	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/mocs_compilation.cpp	4ba9ab9c7c3e1190
+737	2061	7387790703170619	CMakeFiles/Qtify.dir/Qtify_autogen/mocs_compilation.cpp.obj	d02593cdf1ce283e
+740	2103	7387790703589500	CMakeFiles/Qtify.dir/main.cpp.obj	83c461922f23537f
+739	2117	7387790703739100	CMakeFiles/Qtify.dir/mainwindow.cpp.obj	cc33df3d6b5439b7
+2117	2272	7387790705255049	Qtify.exe	502f109a4e07441d
