@@ -1,79 +1,21 @@
 Qtify_autogen/timestamp: \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineRCCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeGenericSystem.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeNinjaFindMake.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeRCCompiler.cmake.in \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeRCInformation.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeSystem.cmake.in \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeTestRCCompiler.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckCXXCompilerFlag.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckIncludeFileCXX.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake \
@@ -82,8 +24,6 @@ Qtify_autogen/timestamp: \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckCompilerFlag.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckFlagCommonConfig.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake \
-  C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-Determine-CXX.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake \
   C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake \
@@ -99,6 +39,10 @@ Qtify_autogen/timestamp: \
   D:/Dev/Qtify/main.cpp \
   D:/Dev/Qtify/mainwindow.cpp \
   D:/Dev/Qtify/mainwindow.h \
+  D:/Dev/Qtify/searchMusic.cpp \
+  D:/Dev/Qtify/searchMusic.h \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.7.1/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/q20memory.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/q20type_traits.h \
@@ -210,6 +154,7 @@ Qtify_autogen/timestamp: \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qtversionchecks.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qtypes.h \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qutf8stringview.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -229,19 +174,32 @@ Qtify_autogen/timestamp: \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpalette.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qpen.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qtextcursor.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qtextdocument.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qtextformat.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qtextoption.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qtguiexports.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLineEdit \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMainWindow \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QVBoxLayout \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayout.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlineedit.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qtabwidget.h \
