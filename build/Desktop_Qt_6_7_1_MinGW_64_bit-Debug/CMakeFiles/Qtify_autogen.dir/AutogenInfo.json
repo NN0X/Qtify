@@ -299,12 +299,7 @@
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
-		[
-			"D:/Dev/Qtify/searchMusic.h",
-			"MU",
-			"EWIEGA46WW/moc_searchMusic.cpp",
-			null
-		]
+		[ "D:/Dev/Qtify/yt.h", "MU", "EWIEGA46WW/moc_yt.cpp", null ]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/include",
@@ -378,7 +373,7 @@
 	[
 		[ "D:/Dev/Qtify/main.cpp", "MU", null ],
 		[ "D:/Dev/Qtify/mainwindow.cpp", "MU", null ],
-		[ "D:/Dev/Qtify/searchMusic.cpp", "MU", null ]
+		[ "D:/Dev/Qtify/yt.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

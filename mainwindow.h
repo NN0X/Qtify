@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDir>
 #include <QMainWindow>
 #include <QVBoxLayout>
 
-#include "searchMusic.h"
+#include "yt.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -24,6 +25,6 @@ public:
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *layout;
-    SearchMusic *searchMusic;
+    SearchMusicYT *searchMusicYT;
 };
 #endif // MAINWINDOW_H
