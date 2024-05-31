@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QtConcurrent/QtConcurrent>
 #include <QAbstractItemView>
+#include <QRegularExpression>
 
 class SearchMusicYT : public QObject
 {
@@ -19,22 +20,23 @@ class SearchMusicYT : public QObject
 public:
     QWidget *parent;
     QLineEdit *textInput;
-    QString songsFound;
-    QString renderedSongsFound;
     QListWidget *songList;
+
+    QString songsFound;
+    QString songsDownloading;
+    QString songsError;
+    QString renderedSongsFound;
 
     SearchMusicYT(QMainWindow *parent);
     ~SearchMusicYT();
 
+    void download(QString name);
+
 public slots:
     void textChanged(const QString &text);
-    void displaySongsFound();
+    bool songAlreadyDownloaded(QString song);
+    void displaySongsFound(bool force);
     void songListDoubleClicked(QListWidgetItem *item);
 };
-
-namespace YT
-{
-    void download(QString name);
-}
 
 #endif // YT_H

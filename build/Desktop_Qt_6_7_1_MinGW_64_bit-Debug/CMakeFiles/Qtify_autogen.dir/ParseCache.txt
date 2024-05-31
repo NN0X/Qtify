@@ -32,6 +32,7 @@ D:/Dev/Qtify/mainwindow.h
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QMutex
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QObject
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QProcess
+ mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QString
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer
@@ -2080,6 +2081,7 @@ D:/Dev/Qtify/yt.h
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QMutex
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QObject
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QProcess
+ mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QString
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer

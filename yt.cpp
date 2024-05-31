@@ -11,6 +11,8 @@ SearchMusicYT::SearchMusicYT(QMainWindow *parent)
 
     songsFound = "";
     renderedSongsFound = "";
+    songsDownloading = "";
+    songsError = "";
 
     songList = new QListWidget(parent);
     songList->setGeometry(0, 20, 200, 180);
@@ -22,7 +24,8 @@ SearchMusicYT::SearchMusicYT(QMainWindow *parent)
     connect(textInput, &QLineEdit::textChanged, this, &SearchMusicYT::textChanged);
 
     QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &SearchMusicYT::displaySongsFound);
+    connect(timer, &QTimer::timeout, this, [=]()
+            { displaySongsFound(false); });
     timer->start(10);
 
     connect(songList, &QListWidget::itemDoubleClicked, this, &SearchMusicYT::songListDoubleClicked);
@@ -48,9 +51,26 @@ void SearchMusicYT::textChanged(const QString &text)
         }, Qt::QueuedConnection); });
 }
 
-void SearchMusicYT::displaySongsFound()
+bool SearchMusicYT::songAlreadyDownloaded(QString song)
 {
-    if (renderedSongsFound == songsFound)
+    song = song.replace(QRegularExpression("[^a-zA-Z0-9 ]"), "");
+    QDir dir("resources/music");
+    QStringList files = dir.entryList(QDir::Files);
+    for (QString file : files)
+    {
+        // remove special characters
+        file = file.replace(QRegularExpression("[^a-zA-Z0-9 ]"), "");
+        if (file == song + "mp4")
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void SearchMusicYT::displaySongsFound(bool force)
+{
+    if (renderedSongsFound == songsFound && !force)
     {
         return;
     }
@@ -58,11 +78,29 @@ void SearchMusicYT::displaySongsFound()
 
     for (QString song : songsFound.split("\n"))
     {
+        song = song.left(song.length() - 1);
         if (song.isEmpty())
         {
             continue;
         }
-        songList->addItem(song);
+        QListWidgetItem *item = new QListWidgetItem(song);
+        if (songAlreadyDownloaded(song))
+        {
+            item->setForeground(Qt::green);
+        }
+        else if (songsDownloading.contains(song))
+        {
+            item->setForeground(Qt::blue);
+        }
+        else if (songsError.contains(song))
+        {
+            item->setForeground(Qt::red);
+        }
+        else
+        {
+            item->setForeground(Qt::black);
+        }
+        songList->addItem(item);
     }
 
     songList->show();
@@ -72,4 +110,24 @@ void SearchMusicYT::displaySongsFound()
 
 void SearchMusicYT::songListDoubleClicked(QListWidgetItem *item)
 {
+    songsDownloading += item->text() + "\n";
+    displaySongsFound(true);
+
+    QtConcurrent::run([this, item]
+                      { SearchMusicYT::download(item->text()); });
+}
+
+void SearchMusicYT::download(QString name)
+{
+    QProcess *process = new QProcess();
+    process->start("resources/bin/DownloadYT.exe", QStringList() << name);
+    process->waitForFinished();
+    if (songsDownloading.contains(name + "\n"))
+    {
+        songsDownloading = songsDownloading.replace(name + "\n", "");
+    }
+
+    delete process;
+
+    displaySongsFound(true);
 }
