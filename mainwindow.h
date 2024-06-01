@@ -1,11 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDir>
 #include <QMainWindow>
+#include <QVBoxLayout>
+
+#include "yt.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
+namespace Ui
+{
+    class MainWindow;
 }
 QT_END_NAMESPACE
 
@@ -19,5 +24,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QVBoxLayout *layout;
+    SearchMusicYT *searchMusicYT;
 };
 #endif // MAINWINDOW_H
