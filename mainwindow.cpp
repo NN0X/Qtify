@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->setAlignment(Qt::AlignTop);
 
     searchMusicYT = new SearchMusicYT(this);
-    layout->addWidget(searchMusicYT->textInput);
+    layout->addWidget(searchMusicYT->searchTerm);
     layout->addWidget(searchMusicYT->songList);
 
     ui->setupUi(this);

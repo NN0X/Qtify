@@ -683,10 +683,9 @@ D:/Dev/Qtify/mainwindow.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
-D:/Dev/Qtify/main.cpp
 D:/Dev/Qtify/mainwindow.cpp
  uic:./ui_mainwindow.h
-D:/Dev/Qtify/searchMusicYT.cpp
+D:/Dev/Qtify/main.cpp
 D:/Dev/Qtify/searchMusic.h
  mmc:Q_OBJECT
  mdp:D:/Dev/Qtify/searchMusic.h
@@ -1368,6 +1367,8 @@ D:/Dev/Qtify/searchMusic.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+D:/Dev/Qtify/searchMusicYT.cpp
+D:/Dev/Qtify/searchMusic.cpp
 D:/Dev/Qtify/searchMusicYT.h
  mmc:Q_OBJECT
  mdp:D:/Dev/Qtify/searchMusicYT.h
@@ -2049,7 +2050,6 @@ D:/Dev/Qtify/searchMusicYT.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
-D:/Dev/Qtify/searchMusic.cpp
 D:/Dev/Qtify/yt.h
  mmc:Q_OBJECT
  mdp:D:/Dev/Qtify/yt.h

@@ -13,30 +13,33 @@
 #include <QAbstractItemView>
 #include <QRegularExpression>
 
+const QString RESOURCES_PATH = "resources";
+
 class SearchMusicYT : public QObject
 {
     Q_OBJECT
 
 public:
     QWidget *parent;
-    QLineEdit *textInput;
+    QLineEdit *searchTerm;
     QListWidget *songList;
 
-    QString songsFound;
-    QString songsDownloading;
-    QString songsError;
-    QString renderedSongsFound;
+    QStringList songsFoundIDs;
+    QStringList songsFoundTitles;
+    QStringList songsAlreadyFoundIDs;
+    QStringList songsDownloadingIDs;
 
     SearchMusicYT(QMainWindow *parent);
     ~SearchMusicYT();
 
-    void download(QString name);
+    void download(QString id);
 
 public slots:
-    void textChanged(const QString &text);
-    bool songAlreadyDownloaded(QString song);
-    void displaySongsFound(bool force);
-    void songListDoubleClicked(QListWidgetItem *item);
+    void onSearchTermChange(const QString &text);
+    bool isAlreadyDownloaded(QString id);
+    void updateSongList(bool force);
+    void onSongListDoubleClick(QListWidgetItem *item);
+    void addToDatabase(QString id, QString title);
 };
 
 #endif // YT_H

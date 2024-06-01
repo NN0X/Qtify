@@ -1,66 +1,73 @@
 ﻿#include "yt.h"
 
 SearchMusicYT::SearchMusicYT(QMainWindow *parent)
+    : songList(new QListWidget(parent)), parent(parent), searchTerm(new QLineEdit()),
+      songsFoundIDs(QStringList()), songsFoundTitles(QStringList()),
+      songsAlreadyFoundIDs(QStringList()), songsDownloadingIDs(QStringList())
 {
-    this->parent = parent;
+    searchTerm->setPlaceholderText("Enter song to find...");
+    searchTerm->setGeometry(0, 0, 200, 20);
+    searchTerm->show();
 
-    textInput = new QLineEdit();
-    textInput->setPlaceholderText("Enter song name...");
-    textInput->setGeometry(0, 0, 200, 20);
-    textInput->show();
-
-    songsFound = "";
-    renderedSongsFound = "";
-    songsDownloading = "";
-    songsError = "";
-
-    songList = new QListWidget(parent);
     songList->setGeometry(0, 20, 200, 180);
     songList->setSelectionMode(QAbstractItemView::SingleSelection);
     songList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     songList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     songList->show();
 
-    connect(textInput, &QLineEdit::textChanged, this, &SearchMusicYT::textChanged);
+    connect(searchTerm, &QLineEdit::textChanged, this, &SearchMusicYT::onSearchTermChange);
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [=]()
-            { displaySongsFound(false); });
+            { updateSongList(false); });
     timer->start(10);
 
-    connect(songList, &QListWidget::itemDoubleClicked, this, &SearchMusicYT::songListDoubleClicked);
+    connect(songList, &QListWidget::itemDoubleClicked, this, &SearchMusicYT::onSongListDoubleClick);
+
+    qDebug() << "SearchMusicYT initialized";
 }
 
 SearchMusicYT::~SearchMusicYT()
 {
-    delete textInput;
+    delete searchTerm;
+    delete songList;
+
+    qDebug() << "SearchMusicYT destroyed";
 }
 
-void SearchMusicYT::textChanged(const QString &text)
+void SearchMusicYT::onSearchTermChange(const QString &text)
 {
     QtConcurrent::run([this, text]
                       {
         QProcess *process = new QProcess();
-        process->start("resources/bin/SearchMusicYT.exe", QStringList() << text);
+        process->start(RESOURCES_PATH + "/bin/SearchMusicYT.exe", QStringList() << text);
         process->waitForFinished();
         QString output = process->readAllStandardOutput();
         delete process;
 
         QMetaObject::invokeMethod(this, [this, output] {
-            songsFound = output;
+            songsFoundIDs.clear();
+            songsFoundTitles.clear();
+            for (QString song : output.split("\n"))
+            {
+                if (song.isEmpty())
+                {
+                    continue;
+                }
+                QStringList songSplit = song.split("\t");
+                songsFoundIDs.append(songSplit[1].remove(QRegularExpression("[\\r]")));
+                songsFoundTitles.append(songSplit[0]);
+            }
         }, Qt::QueuedConnection); });
 }
 
-bool SearchMusicYT::songAlreadyDownloaded(QString song)
+bool SearchMusicYT::isAlreadyDownloaded(QString id)
 {
-    song = song.replace(QRegularExpression("[^a-zA-Z0-9 ]"), "");
-    QDir dir("resources/music");
+    QDir dir(RESOURCES_PATH + "/music");
     QStringList files = dir.entryList(QDir::Files);
     for (QString file : files)
     {
-        // remove special characters
-        file = file.replace(QRegularExpression("[^a-zA-Z0-9 ]"), "");
-        if (file == song + "mp4")
+        if (file.contains(id))
         {
             return true;
         }
@@ -68,33 +75,28 @@ bool SearchMusicYT::songAlreadyDownloaded(QString song)
     return false;
 }
 
-void SearchMusicYT::displaySongsFound(bool force)
+void SearchMusicYT::updateSongList(bool force)
 {
-    if (renderedSongsFound == songsFound && !force)
+    if (songsAlreadyFoundIDs == songsFoundIDs && !force)
     {
         return;
     }
     songList->clear();
 
-    for (QString song : songsFound.split("\n"))
+    for (int i = 0; i < songsFoundIDs.size(); i++)
     {
-        song = song.left(song.length() - 1);
-        if (song.isEmpty())
+        if (songsFoundTitles[i].isEmpty())
         {
             continue;
         }
-        QListWidgetItem *item = new QListWidgetItem(song);
-        if (songAlreadyDownloaded(song))
+        QListWidgetItem *item = new QListWidgetItem(songsFoundTitles[i]);
+        if (isAlreadyDownloaded(songsFoundIDs[i]))
         {
             item->setForeground(Qt::green);
         }
-        else if (songsDownloading.contains(song))
+        else if (songsDownloadingIDs.contains(songsFoundIDs[i]))
         {
-            item->setForeground(Qt::blue);
-        }
-        else if (songsError.contains(song))
-        {
-            item->setForeground(Qt::red);
+            item->setForeground(Qt::yellow);
         }
         else
         {
@@ -105,29 +107,66 @@ void SearchMusicYT::displaySongsFound(bool force)
 
     songList->show();
 
-    renderedSongsFound = songsFound;
+    songsAlreadyFoundIDs = songsFoundIDs;
 }
 
-void SearchMusicYT::songListDoubleClicked(QListWidgetItem *item)
+void SearchMusicYT::onSongListDoubleClick(QListWidgetItem *item)
 {
-    songsDownloading += item->text() + "\n";
-    displaySongsFound(true);
+    if (isAlreadyDownloaded(songsFoundIDs[songsFoundTitles.indexOf(item->text())]))
+    {
+        // go to player
+        return;
+    }
+    else if (songsDownloadingIDs.contains(songsFoundIDs[songsFoundTitles.indexOf(item->text())]))
+    {
+        return;
+    }
 
-    QtConcurrent::run([this, item]
-                      { SearchMusicYT::download(item->text()); });
+    QString id = songsFoundIDs[songsFoundTitles.indexOf(item->text())];
+
+    qDebug() << "Downloading " << item->text() << " with id " << id;
+
+    QtConcurrent::run([this, id]
+                      { SearchMusicYT::download(id); });
+
+    songsDownloadingIDs.append(id);
+    updateSongList(true);
 }
 
-void SearchMusicYT::download(QString name)
+void SearchMusicYT::download(QString id)
 {
     QProcess *process = new QProcess();
-    process->start("resources/bin/DownloadYT.exe", QStringList() << name);
+    process->start(RESOURCES_PATH + "/bin/DownloadYT.exe", QStringList() << id);
     process->waitForFinished();
-    if (songsDownloading.contains(name + "\n"))
-    {
-        songsDownloading = songsDownloading.replace(name + "\n", "");
-    }
+    QString output = process->readAllStandardOutput();
 
     delete process;
 
-    displaySongsFound(true);
+    if (output.contains("ERROR"))
+    {
+        qDebug() << "Error downloading " << songsFoundTitles[songsFoundIDs.indexOf(id)];
+    }
+    else
+    {
+        qDebug() << "Downloaded " << songsFoundTitles[songsFoundIDs.indexOf(id)];
+
+        addToDatabase(id, songsFoundTitles[songsFoundIDs.indexOf(id)]);
+    }
+
+    songsDownloadingIDs.removeOne(id);
+    updateSongList(true);
+}
+
+void SearchMusicYT::addToDatabase(QString id, QString title)
+{
+    QFile file(RESOURCES_PATH + "/music/list.txt");
+    if (!file.open(QIODevice::Append))
+    {
+        return;
+    }
+    QTextStream stream(&file);
+    stream << id << "\t" << title << "\n";
+    file.close();
+
+    qDebug() << "Added " << title << " to database";
 }

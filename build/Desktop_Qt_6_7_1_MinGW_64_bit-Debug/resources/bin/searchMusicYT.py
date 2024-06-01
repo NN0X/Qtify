@@ -3,13 +3,17 @@ from pytube import Search
 
 def searchMusic(term):
     search = Search(term)
-    # return top 10 results
-    return [video.title for video in search.results[:9]]
+    info = [video.vid_info for video in search.results[:9]]
+    titles = [video.title for video in search.results[:9]]
+    ids = [info['videoDetails']['videoId'] for info in info]
+    return titles, ids
 
 
 try:
-    found = searchMusic(sys.argv[1])
-    for i in found:
-        print(i)
+    for title, id in zip(*searchMusic(sys.argv[1])):
+        print(f"{title}\t{id}")
 except:
     pass
+
+
+

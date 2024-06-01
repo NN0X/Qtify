@@ -37,16 +37,18 @@ namespace {
 struct qt_meta_stringdata_CLASSSearchMusicYTENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSSearchMusicYTENDCLASS = QtMocHelpers::stringData(
     "SearchMusicYT",
-    "textChanged",
+    "onSearchTermChange",
     "",
     "text",
-    "songAlreadyDownloaded",
-    "song",
-    "displaySongsFound",
+    "isAlreadyDownloaded",
+    "id",
+    "updateSongList",
     "force",
-    "songListDoubleClicked",
+    "onSongListDoubleClick",
     "QListWidgetItem*",
-    "item"
+    "item",
+    "addToDatabase",
+    "title"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -59,7 +61,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSearchMusicYTENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,16 +69,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSSearchMusicYTENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   38,    2, 0x0a,    1 /* Public */,
-       4,    1,   41,    2, 0x0a,    3 /* Public */,
-       6,    1,   44,    2, 0x0a,    5 /* Public */,
-       8,    1,   47,    2, 0x0a,    7 /* Public */,
+       1,    1,   44,    2, 0x0a,    1 /* Public */,
+       4,    1,   47,    2, 0x0a,    3 /* Public */,
+       6,    1,   50,    2, 0x0a,    5 /* Public */,
+       8,    1,   53,    2, 0x0a,    7 /* Public */,
+      11,    2,   56,    2, 0x0a,    9 /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Bool, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::Bool,    7,
     QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,    5,   12,
 
        0        // eod
 };
@@ -90,18 +94,22 @@ Q_CONSTINIT const QMetaObject SearchMusicYT::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSSearchMusicYTENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SearchMusicYT, std::true_type>,
-        // method 'textChanged'
+        // method 'onSearchTermChange'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        // method 'songAlreadyDownloaded'
+        // method 'isAlreadyDownloaded'
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         QtPrivate::TypeAndForceComplete<QString, std::false_type>,
-        // method 'displaySongsFound'
+        // method 'updateSongList'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
-        // method 'songListDoubleClicked'
+        // method 'onSongListDoubleClick'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QListWidgetItem *, std::false_type>
+        QtPrivate::TypeAndForceComplete<QListWidgetItem *, std::false_type>,
+        // method 'addToDatabase'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>
     >,
     nullptr
 } };
@@ -112,11 +120,12 @@ void SearchMusicYT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<SearchMusicYT *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: { bool _r = _t->songAlreadyDownloaded((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 0: _t->onSearchTermChange((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 1: { bool _r = _t->isAlreadyDownloaded((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 2: _t->displaySongsFound((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 3: _t->songListDoubleClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
+        case 2: _t->updateSongList((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 3: _t->onSongListDoubleClick((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
+        case 4: _t->addToDatabase((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         default: ;
         }
     }
@@ -141,13 +150,13 @@ int SearchMusicYT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
