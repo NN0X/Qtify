@@ -6,6 +6,9 @@
 #include <QVBoxLayout>
 
 #include "yt.h"
+#include "player.h"
+
+class SearchMusicYT;
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -18,13 +21,15 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *layout;
     SearchMusicYT *searchMusicYT;
+
+public:
+    Player *player;
+
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 };
 #endif // MAINWINDOW_H
