@@ -48,14 +48,28 @@ unsigned int Song::getTimestamp()
     return timestamp;
 }
 
+void Song::setDuration(unsigned int duration)
+{
+    this->duration = duration;
+}
+
+unsigned int Song::getDuration()
+{
+    return duration;
+}
+
 Player::Player(QWidget *parent)
-    : parent(parent), currentSong(nullptr)
+    : parent(parent), currentSong(nullptr), player(nullptr), previousSong(nullptr), nextSong(nullptr)
 {
     playButton = new QPushButton("Play", parent);
     connect(playButton, &QPushButton::clicked, this, &Player::onPlayButtonClick);
 
-    next = new QPushButton("Next", parent);
-    prev = new QPushButton("Prev", parent);
+    nextButton = new QPushButton("Next", parent);
+    connect(nextButton, &QPushButton::clicked, this, &Player::next);
+
+    prevButton = new QPushButton("Previous", parent);
+    connect(prevButton, &QPushButton::clicked, this, &Player::prev);
+
     volume = new QSlider(Qt::Horizontal, parent);
     progress = new QSlider(Qt::Horizontal, parent);
     if (currentSong == nullptr)
@@ -63,8 +77,8 @@ Player::Player(QWidget *parent)
         currentSong = new Song("0");
     }
     songTitle = new QLabel(currentSong->title, parent);
-    songTime = new QLabel("0:00", parent);
-    songDuration = new QLabel("0:00", parent);
+    songTime = new QLabel("--:--", parent);
+    songDuration = new QLabel("--:--", parent);
 }
 
 Player::~Player()
@@ -78,14 +92,16 @@ Player::~Player()
 
 void Player::playSong(QString id)
 {
-    if (currentSong != nullptr)
+    if (currentSong->id != "0")
     {
-        delete currentSong;
+        previousSong = currentSong;
+        pause();
+        currentSong = nullptr;
     }
     currentSong = new Song(id);
     songTitle->setText(currentSong->title);
-    songTime->setText("0:00");
-    songDuration->setText("0:00");
+    songTime->setText("--:--");
+    songDuration->setText("--:--");
     progress->setValue(0);
     volume->setValue(50);
 
@@ -100,10 +116,19 @@ void Player::play()
     {
         delete player;
     }
+    QProcess *duration = new QProcess();
+    duration->start("resources/bin/getDuration.exe", QStringList() << currentSong->id);
+    duration->waitForFinished();
+    QString output = duration->readAllStandardOutput();
+    delete duration;
+
+    currentSong->setDuration(output.toUInt());
+    songDuration->setText(QString::number(currentSong->getDuration() / 60) + ":" + QString::number(currentSong->getDuration() % 60));
+
     player = new QProcess();
     player->start("resources/bin/player.exe", QStringList() << currentSong->id << QString::number(currentSong->getTimestamp()));
-    QString output = player->readAllStandardOutput();
-    qDebug() << output;
+    QtConcurrent::run([this]
+                      { Player::updateProgress(); });
 }
 
 void Player::pause()
@@ -116,6 +141,64 @@ void Player::pause()
         player->waitForFinished();
         delete player;
         player = nullptr;
+    }
+
+    // to prevent updateProgress from doubleing
+    QThread::sleep(1);
+}
+
+void Player::next()
+{
+    if (nextSong == nullptr)
+    {
+        return;
+    }
+    if (currentSong != nullptr)
+    {
+        delete currentSong;
+    }
+    currentSong = nextSong;
+    nextSong = nullptr;
+    playSong(currentSong->id);
+}
+
+void Player::prev()
+{
+    if (previousSong == nullptr)
+    {
+        return;
+    }
+    if (nextSong != nullptr)
+    {
+        delete nextSong;
+    }
+    nextSong = currentSong;
+    currentSong = previousSong;
+    previousSong = nullptr;
+    playSong(currentSong->id);
+}
+
+void Player::updateProgress()
+{
+    while (player != nullptr)
+    {
+        QThread::sleep(1);
+        if (player == nullptr)
+        {
+            break;
+        }
+        if (currentSong == nullptr)
+        {
+            break;
+        }
+        currentSong->setTimestamp(currentSong->getTimestamp() + 1);
+        songTime->setText(QString::number(currentSong->getTimestamp() / 60) + ":" + QString::number(currentSong->getTimestamp() % 60));
+        progress->setValue(currentSong->getTimestamp() * 100 / currentSong->getDuration());
+
+        if (currentSong->getTimestamp() >= currentSong->getDuration())
+        {
+            next();
+        }
     }
 }
 

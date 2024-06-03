@@ -10,11 +10,14 @@
 #include <QTextStream>
 #include <QStringList>
 #include <QProcess>
+#include <QtConcurrent/QtConcurrent>
+#include <QThread>
 
 class Song
 {
 private:
     unsigned int timestamp;
+    unsigned int duration;
 
 public:
     QString id;
@@ -25,20 +28,25 @@ public:
 
     void setTimestamp(unsigned int timestamp);
     unsigned int getTimestamp();
+
+    void setDuration(unsigned int duration);
+    unsigned int getDuration();
 };
 
 class Player : public QObject
 {
     Q_OBJECT
 private:
+    Song *previousSong;
     Song *currentSong;
+    Song *nextSong;
     QProcess *player;
 
 public:
     QWidget *parent;
     QPushButton *playButton;
-    QPushButton *next;
-    QPushButton *prev;
+    QPushButton *nextButton;
+    QPushButton *prevButton;
     QSlider *volume;
     QSlider *progress;
     QLabel *songTitle;
@@ -52,10 +60,9 @@ public:
 
     void play();
     void pause();
-    void nextSong();
-    void prevSong();
+    void next();
+    void prev();
     void setVolume(int volume);
-    void setTimestamp(unsigned int timestamp);
 
     void updateProgress();
 

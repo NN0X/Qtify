@@ -13,8 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     player = new Player(this);
     layout->addWidget(player->playButton);
-    layout->addWidget(player->next);
-    layout->addWidget(player->prev);
+    layout->addWidget(player->nextButton);
+    layout->addWidget(player->prevButton);
     layout->addWidget(player->volume);
     layout->addWidget(player->progress);
     layout->addWidget(player->songTitle);

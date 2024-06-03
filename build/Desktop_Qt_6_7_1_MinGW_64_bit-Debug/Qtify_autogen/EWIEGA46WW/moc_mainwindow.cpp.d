@@ -36,6 +36,7 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QThread \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QtCore \
