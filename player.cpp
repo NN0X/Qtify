@@ -1,132 +1,89 @@
 ﻿#include "player.h"
 
-Song::Song(QString id)
-    : id(id), timestamp(0)
-{
-    if (id == "0")
-    {
-        title = "Unknown";
-        return;
-    }
-
-    QFile file("resources/music/list.txt");
-    if (!file.open(QIODevice::ReadOnly))
-    {
-        return;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd())
-    {
-        QString line = in.readLine();
-        QStringList fields = line.split("\t");
-        if (fields[0] == id)
-        {
-            title = fields[1];
-            break;
-        }
-    }
-    file.close();
-
-    if (title.isEmpty())
-    {
-        title = "Unknown";
-    }
-}
-
-Song::~Song()
-{
-}
-
-void Song::setTimestamp(unsigned int timestamp)
-{
-    this->timestamp = timestamp;
-}
-
-unsigned int Song::getTimestamp()
-{
-    return timestamp;
-}
-
-void Song::setDuration(unsigned int duration)
-{
-    this->duration = duration;
-}
-
-unsigned int Song::getDuration()
-{
-    return duration;
-}
-
 Player::Player(QWidget *parent)
-    : parent(parent), currentSong(nullptr), player(nullptr), previousSong(nullptr), nextSong(nullptr)
+    : parent(parent), currentSong(nullptr), playerProcess(nullptr), previousSong(nullptr), nextSong(nullptr)
 {
     playButton = new QPushButton("Play", parent);
     connect(playButton, &QPushButton::clicked, this, &Player::onPlayButtonClick);
 
     nextButton = new QPushButton("Next", parent);
-    connect(nextButton, &QPushButton::clicked, this, &Player::next);
+    connect(nextButton, &QPushButton::clicked, this, &Player::onNextButtonClick);
 
     prevButton = new QPushButton("Previous", parent);
-    connect(prevButton, &QPushButton::clicked, this, &Player::prev);
+    connect(prevButton, &QPushButton::clicked, this, &Player::onPrevButtonClick);
 
     volume = new QSlider(Qt::Horizontal, parent);
+    volume->setRange(0, 100);
+    connect(volume, &QSlider::sliderReleased, this, &Player::onVolumeChange);
+
     progress = new QSlider(Qt::Horizontal, parent);
-    if (currentSong == nullptr)
-    {
-        currentSong = new Song("0");
-    }
-    songTitle = new QLabel(currentSong->title, parent);
+    progress->setRange(0, 100);
+    progress->setTracking(false);
+    connect(progress, &QSlider::sliderReleased, this, &Player::onProgressChange);
+
+    currentSong = new Song();
+    previousSong = new Song();
+    nextSong = new Song();
+
+    volume->setValue(50);
+    progress->setValue(0);
+    songTitle = new QLabel("Unknown", parent);
     songTime = new QLabel("--:--", parent);
     songDuration = new QLabel("--:--", parent);
 }
 
 Player::~Player()
 {
-    if (player != nullptr)
+    if (playerProcess != nullptr)
     {
         pause();
     }
     delete currentSong;
+    delete previousSong;
+    delete nextSong;
+    delete playButton;
+    delete nextButton;
+    delete prevButton;
+    delete volume;
+    delete progress;
+    delete songTitle;
+    delete songTime;
+    delete songDuration;
 }
 
-void Player::playSong(QString id)
+void Player::loadSong(QString id)
 {
-    if (currentSong->id != "0")
+    pause();
+
+    if (currentSong->getId() != "0")
     {
+        delete previousSong;
         previousSong = currentSong;
-        pause();
-        currentSong = nullptr;
     }
+    else
+        delete currentSong;
+
     currentSong = new Song(id);
-    songTitle->setText(currentSong->title);
-    songTime->setText("--:--");
-    songDuration->setText("--:--");
-    progress->setValue(0);
-    volume->setValue(50);
 
     play();
 }
 
 void Player::play()
 {
+    if (currentSong->getId() == "0")
+        return;
+
     playButton->setText("Pause");
 
-    if (player != nullptr)
-    {
-        delete player;
-    }
-    QProcess *duration = new QProcess();
-    duration->start("resources/bin/getDuration.exe", QStringList() << currentSong->id);
-    duration->waitForFinished();
-    QString output = duration->readAllStandardOutput();
-    delete duration;
-
-    currentSong->setDuration(output.toUInt());
+    songTitle->setText(currentSong->getTitle());
+    songTime->setText(QString::number(currentSong->getTime() / 60) + ":" + QString::number(currentSong->getTime() % 60));
     songDuration->setText(QString::number(currentSong->getDuration() / 60) + ":" + QString::number(currentSong->getDuration() % 60));
 
-    player = new QProcess();
-    player->start("resources/bin/player.exe", QStringList() << currentSong->id << QString::number(currentSong->getTimestamp()));
+    if (playerProcess != nullptr)
+        delete playerProcess;
+
+    playerProcess = new QProcess();
+    playerProcess->start("resources/bin/player.exe", QStringList() << currentSong->getId() << QString::number(currentSong->getTime()));
     QtConcurrent::run([this]
                       { Player::updateProgress(); });
 }
@@ -135,67 +92,72 @@ void Player::pause()
 {
     playButton->setText("Play");
 
-    if (player != nullptr)
+    if (playerProcess != nullptr)
     {
-        player->write("STOP\n");
-        player->waitForFinished();
-        delete player;
-        player = nullptr;
+        playerProcess->write("STOP\n");
+        playerProcess->waitForFinished();
+        delete playerProcess;
+        playerProcess = nullptr;
     }
-
-    // to prevent updateProgress from doubleing
-    QThread::sleep(1);
 }
 
 void Player::next()
 {
-    if (nextSong == nullptr)
+    if (nextSong->getId() == "0")
     {
         return;
     }
-    if (currentSong != nullptr)
-    {
-        delete currentSong;
-    }
+
+    pause();
+
+    delete previousSong;
+    previousSong = currentSong;
     currentSong = nextSong;
-    nextSong = nullptr;
-    playSong(currentSong->id);
+    nextSong = new Song();
+
+    play();
 }
 
 void Player::prev()
 {
-    if (previousSong == nullptr)
+    if (previousSong->getId() == "0")
     {
         return;
-    }
-    if (nextSong != nullptr)
-    {
-        delete nextSong;
-    }
+    };
+
+    pause();
+
+    delete nextSong;
     nextSong = currentSong;
     currentSong = previousSong;
-    previousSong = nullptr;
-    playSong(currentSong->id);
+    previousSong = new Song();
+
+    play();
 }
 
 void Player::updateProgress()
 {
-    while (player != nullptr)
+    QProcess *thisProcess = playerProcess;
+    QElapsedTimer timer;
+    timer.start();
+    while (true)
     {
-        QThread::sleep(1);
-        if (player == nullptr)
+        QThread::msleep(100);
+        if (timer.elapsed() >= 1000)
+        {
+            timer.restart();
+        }
+        else
+            continue;
+        if (playerProcess != thisProcess)
         {
             break;
         }
-        if (currentSong == nullptr)
-        {
-            break;
-        }
-        currentSong->setTimestamp(currentSong->getTimestamp() + 1);
-        songTime->setText(QString::number(currentSong->getTimestamp() / 60) + ":" + QString::number(currentSong->getTimestamp() % 60));
-        progress->setValue(currentSong->getTimestamp() * 100 / currentSong->getDuration());
+        currentSong->setTime(currentSong->getTime() + 1);
+        songTime->setText(QString::number(currentSong->getTime() / 60) + ":" + QString::number(currentSong->getTime() % 60));
+        progress->setValue(currentSong->getTime() * 100 / currentSong->getDuration());
 
-        if (currentSong->getTimestamp() >= currentSong->getDuration())
+        if (currentSong->getTime() >= currentSong->getDuration())
         {
             next();
         }
@@ -212,4 +174,26 @@ void Player::onPlayButtonClick()
     {
         pause();
     }
+}
+
+void Player::onNextButtonClick()
+{
+    next();
+}
+
+void Player::onPrevButtonClick()
+{
+    prev();
+}
+
+void Player::onVolumeChange()
+{
+    if (currentSong->getId() == "0")
+        return;
+}
+
+void Player::onProgressChange()
+{
+    if (currentSong->getId() == "0")
+        return;
 }

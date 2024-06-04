@@ -114,7 +114,7 @@ void SearchMusicYT::onSongListDoubleClick(QListWidgetItem *item)
 {
     if (isAlreadyDownloaded(songsFoundIDs[songsFoundTitles.indexOf(item->text())]))
     {
-        qobject_cast<MainWindow *>(parent)->player->playSong(songsFoundIDs[songsFoundTitles.indexOf(item->text())]);
+        qobject_cast<MainWindow *>(parent)->player->loadSong(songsFoundIDs[songsFoundTitles.indexOf(item->text())]);
         return;
     }
     else if (songsDownloadingIDs.contains(songsFoundIDs[songsFoundTitles.indexOf(item->text())]))

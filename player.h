@@ -1,5 +1,5 @@
-﻿#ifndef SONG_H
-#define SONG_H
+﻿#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <QWidget>
 #include <QPushButton>
@@ -12,26 +12,11 @@
 #include <QProcess>
 #include <QtConcurrent/QtConcurrent>
 #include <QThread>
+#include <QElapsedTimer>
 
-class Song
-{
-private:
-    unsigned int timestamp;
-    unsigned int duration;
+#include <vector>
 
-public:
-    QString id;
-    QString title;
-
-    Song(QString id);
-    ~Song();
-
-    void setTimestamp(unsigned int timestamp);
-    unsigned int getTimestamp();
-
-    void setDuration(unsigned int duration);
-    unsigned int getDuration();
-};
+#include "song.h"
 
 class Player : public QObject
 {
@@ -40,7 +25,7 @@ private:
     Song *previousSong;
     Song *currentSong;
     Song *nextSong;
-    QProcess *player;
+    QProcess *playerProcess;
 
 public:
     QWidget *parent;
@@ -56,18 +41,21 @@ public:
     Player(QWidget *parent);
     ~Player();
 
-    void playSong(QString id);
+    void loadSong(QString id);
 
     void play();
     void pause();
     void next();
     void prev();
-    void setVolume(int volume);
 
     void updateProgress();
 
 public slots:
     void onPlayButtonClick();
+    void onNextButtonClick();
+    void onPrevButtonClick();
+    void onVolumeChange();
+    void onProgressChange();
 };
 
-#endif // SONG_H
+#endif // PLAYER_H
