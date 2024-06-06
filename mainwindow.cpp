@@ -32,10 +32,10 @@ void MainWindow::OpenPlaylistSubMenu()
 
     playlistloader = new class playlistloader(this);
     layout->addWidget(playlistloader);
-    ui->centralwidget->setLayout(layout);
 
-    //&playlistloader::loadPlaylists();
+    ui->centralwidget->setLayout(layout);
 }
+
 
 MainWindow::~MainWindow()
 {
