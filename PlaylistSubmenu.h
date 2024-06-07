@@ -20,12 +20,12 @@ public slots:
 private slots:
     void displayFileContent(QListWidgetItem *item);
     void addSongToPlaylist(QListWidgetItem *item);
-
+    void removeSongFromPlaylist(QListWidgetItem *item);
 private:
     void initUI();
     QListWidget *fileList;
     QListWidget *songList;
-    QTextEdit *fileContent;
+    QListWidget *fileContent;
     QPushButton *newPlaylistButton;
     QPushButton *deletePlaylistButton;
     QPushButton *addButton;

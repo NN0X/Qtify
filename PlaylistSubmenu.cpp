@@ -17,10 +17,11 @@ playlistloader::playlistloader(QWidget *parent)
 void playlistloader::initUI()
 {
     fileList = new QListWidget();
-    fileContent = new QTextEdit();
-    fileContent->setReadOnly(true);
+    fileContent = new QListWidget();
+    fileContent->setSelectionMode(QAbstractItemView::SingleSelection);
 
     connect(fileList, &QListWidget::itemClicked, this, &playlistloader::displayFileContent);
+    connect(fileContent, &QListWidget::itemDoubleClicked, this, &playlistloader::removeSongFromPlaylist);
 
     QVBoxLayout *leftLayout = new QVBoxLayout();
     leftLayout->addWidget(fileContent);
@@ -80,12 +81,15 @@ void playlistloader::displayFileContent(QListWidgetItem *item)
             QString line = in.readLine();
             QStringList parts = line.split("\t");
             if (parts.size() == 2) {
-                fileContent->append(parts[1]);
+                QListWidgetItem *songItem = new QListWidgetItem(parts[1]);
+                songItem->setData(Qt::UserRole, parts[0]);
+                fileContent->addItem(songItem);
             }
         }
         file.close();
     } else {
-        fileContent->setPlainText(QString("Nie znaleziono pliku '%1'.").arg(filename));
+        fileContent->clear();
+        fileContent->addItem(QString("Nie znaleziono pliku '%1'.").arg(filename));
     }
 }
 
@@ -170,7 +174,7 @@ void playlistloader::deleteSelectedPlaylist()
                 return;
             }
 
-            QFile::remove(filename);  // Usuń plik playlisty
+            QFile::remove(filename);
             loadPlaylists();
         } else {
             QMessageBox::warning(this, "Błąd", "Nie można otworzyć pliku 'playlisty.txt' do odczytu.");
@@ -199,5 +203,43 @@ void playlistloader::addSongToPlaylist(QListWidgetItem *item)
         }
     } else {
         QMessageBox::warning(this, "Błąd", "Nie wybrano żadnej playlisty do dodania piosenki.");
+    }
+}
+void playlistloader::removeSongFromPlaylist(QListWidgetItem *item)
+{
+    QString songCode = item->data(Qt::UserRole).toString();
+    QString songName = item->text();
+
+    QListWidgetItem *selectedItem = fileList->currentItem();
+    if (selectedItem) {
+        QString playlistName = selectedItem->text();
+        QString filename = "resources/music/" + playlistName + ".txt";
+        QFile file(filename);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream in(&file);
+            QStringList lines;
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (!line.startsWith(songCode + "\t" + songName)) {
+                    lines.append(line);
+                }
+            }
+            file.close();
+
+            if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                QTextStream out(&file);
+                foreach (const QString &line, lines) {
+                    out << line << "\n";
+                }
+                file.close();
+                displayFileContent(selectedItem);
+            } else {
+                QMessageBox::warning(this, "Błąd", "Nie można otworzyć pliku '" + filename + "' do zapisu.");
+            }
+        } else {
+            QMessageBox::warning(this, "Błąd", "Nie można otworzyć pliku '" + filename + "' do odczytu.");
+        }
+    } else {
+        QMessageBox::warning(this, "Błąd", "Nie wybrano żadnej playlisty do usunięcia piosenki.");
     }
 }
