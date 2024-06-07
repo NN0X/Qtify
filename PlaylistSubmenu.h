@@ -15,13 +15,20 @@ public:
     void loadPlaylists();
 public slots:
     void createNewPlaylist();
+    void deleteSelectedPlaylist();
+    void openListFile();
 private slots:
     void displayFileContent(QListWidgetItem *item);
+    void addSongToPlaylist(QListWidgetItem *item);
+
 private:
     void initUI();
     QListWidget *fileList;
+    QListWidget *songList;
     QTextEdit *fileContent;
     QPushButton *newPlaylistButton;
+    QPushButton *deletePlaylistButton;
+    QPushButton *addButton;
 };
 
 #endif // PLAYLISTSUBMENU_H
