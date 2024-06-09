@@ -11,6 +11,16 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(searchMusicYT->searchTerm);
     layout->addWidget(searchMusicYT->songList);
 
+    player = new Player(this);
+    layout->addWidget(player->playButton);
+    layout->addWidget(player->nextButton);
+    layout->addWidget(player->prevButton);
+    layout->addWidget(player->volumeBar);
+    layout->addWidget(player->progressBar);
+    layout->addWidget(player->songTitle);
+    layout->addWidget(player->songTime);
+    layout->addWidget(player->songDuration);
+
     ui->setupUi(this);
     ui->centralwidget->setLayout(layout);
 }
@@ -20,4 +30,5 @@ MainWindow::~MainWindow()
     delete ui;
     delete layout;
     delete searchMusicYT;
+    delete player;
 }

@@ -1,44 +1,17 @@
 Qtify_autogen/timestamp: \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeGenericSystem.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeRCInformation.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckCXXCompilerFlag.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckIncludeFileCXX.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Compiler/GNU.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/FindVulkan.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/GNUInstallDirs.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckCompilerFlag.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckFlagCommonConfig.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows-windres.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/Windows.cmake \
-	C:/Program\ Files/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake \
 	D:/Dev/Qtify/CMakeLists.txt \
 	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
-	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.26.4/CMakeCXXCompiler.cmake \
-	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.26.4/CMakeRCCompiler.cmake \
-	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.26.4/CMakeSystem.cmake \
+	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
+	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
+	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
 	D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/moc_predefs.h \
 	D:/Dev/Qtify/main.cpp \
 	D:/Dev/Qtify/mainwindow.cpp \
 	D:/Dev/Qtify/mainwindow.h \
+	D:/Dev/Qtify/player.cpp \
+	D:/Dev/Qtify/player.h \
+	D:/Dev/Qtify/song.cpp \
+	D:/Dev/Qtify/song.h \
 	D:/Dev/Qtify/yt.cpp \
 	D:/Dev/Qtify/yt.h \
 	D:/Qt/6.7.1/mingw_64/include/QtConcurrent/QtConcurrent \
@@ -62,7 +35,10 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentthreadengine.h \
 	D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentversion.h \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QDeadlineTimer \
+	D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QDir \
+	D:/Qt/6.7.1/mingw_64/include/QtCore/QElapsedTimer \
+	D:/Qt/6.7.1/mingw_64/include/QtCore/QFile \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QHash \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QList \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QMap \
@@ -72,6 +48,8 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
+	D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \
+	D:/Qt/6.7.1/mingw_64/include/QtCore/QThread \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
 	D:/Qt/6.7.1/mingw_64/include/QtCore/QtCore \
@@ -349,6 +327,7 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpaintdevice.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpalette.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpen.h \
+	D:/Qt/6.7.1/mingw_64/include/QtGui/qpicture.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpixelformat.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpixmap.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qpolygon.h \
@@ -367,10 +346,15 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs.h \
 	D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs_win.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QAbstractItemView \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLabel \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLineEdit \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QListWidget \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMainWindow \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QPushButton \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QSlider \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QVBoxLayout \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractbutton.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemview.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -379,12 +363,14 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qboxlayout.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlabel.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayout.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlineedit.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlistview.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlistwidget.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmainwindow.h \
+	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qpushbutton.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qrubberband.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.7.1/mingw_64/include/QtWidgets/qslider.h \
@@ -535,6 +521,56 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaConfigVersion.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaConfigVersionImpl.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaDependencies.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaPlugins.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaVersionlessTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QFFmpegMediaPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QFFmpegMediaPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QFFmpegMediaPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QFFmpegMediaPluginTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Multimedia/Qt6QWindowsMediaPluginTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfigVersion.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsConfigVersionImpl.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsDependencies.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsVersionlessTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \
@@ -563,6 +599,38 @@ Qtify_autogen/timestamp: \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake \
 	D:/Qt/6.7.1/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeRCInformation.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CheckCXXCompilerFlag.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CheckCXXSourceCompiles.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CheckIncludeFileCXX.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CheckLibraryExists.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Compiler/GNU.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/FindPackageMessage.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/FindThreads.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/FindVulkan.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/GNUInstallDirs.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Internal/CheckCompilerFlag.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Internal/CheckFlagCommonConfig.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows.cmake \
+	D:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/WindowsPaths.cmake \
 	D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
 	D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
 	D:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/adxintrin.h \
@@ -888,4 +956,4 @@ Qtify_autogen/timestamp: \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
 	D:/Dev/Qtify/mainwindow.ui \
-	C:/Program\ Files/CMake/bin/cmake.exe
+	D:/Qt/Tools/CMake_64/bin/cmake.exe

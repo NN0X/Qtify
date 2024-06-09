@@ -1,5 +1,9 @@
 D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/moc_yt.cpp: D:/Dev/Qtify/yt.h \
   D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/moc_predefs.h \
+  D:/Dev/Qtify/mainwindow.h \
+  D:/Dev/Qtify/player.h \
+  D:/Dev/Qtify/song.h \
+  D:/Dev/Qtify/yt.h \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/QtConcurrent \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/QtConcurrentDepends \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtaskbuilder.h \
@@ -21,6 +25,10 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentthreadengine.h \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentversion.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QDeadlineTimer \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QDir \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QElapsedTimer \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QFile \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QHash \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QList \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QMap \
@@ -30,6 +38,8 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QThread \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QVariant \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QtCore \
@@ -307,6 +317,7 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpalette.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpen.h \
+  D:/Qt/6.7.1/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qpolygon.h \
@@ -325,10 +336,15 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.7.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QAbstractItemView \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QLineEdit \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QListWidget \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QMainWindow \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QSlider \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/QVBoxLayout \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -337,12 +353,14 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qboxlayout.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qframe.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qgridlayout.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlabel.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayout.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlayoutitem.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlineedit.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlistview.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qlistwidget.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qmainwindow.h \
+  D:/Qt/6.7.1/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   D:/Qt/6.7.1/mingw_64/include/QtWidgets/qslider.h \
