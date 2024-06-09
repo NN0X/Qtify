@@ -9,10 +9,31 @@ SearchMusicYT::SearchMusicYT(QMainWindow *parent)
     searchTerm->setGeometry(0, 0, 200, 20);
     searchTerm->show();
 
+    searchTerm->setStyleSheet(
+        "QLineEdit {"
+        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+        "        stop:0 #289042);"
+        "    color: white;"
+        "    border: 2px solid #4CAF50;"
+        "    padding: 10px 20px;"
+        "}"
+        );
+
     songList->setGeometry(0, 20, 200, 180);
     songList->setSelectionMode(QAbstractItemView::SingleSelection);
     songList->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     songList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    songList->setStyleSheet(
+        "QListWidget {"
+        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+        "        stop:0  #1A1A1A);"
+        "    color: white;"
+        "    border: 2px solid #4CAF50;"
+        "    padding: 10px 20px;"
+        "}"
+        );
+
     songList->show();
 
     connect(searchTerm, &QLineEdit::textChanged, this, &SearchMusicYT::onSearchTermChange);

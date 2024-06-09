@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/resources/assets/logo.png</file>
+        <file>build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/resources/assets/blank button.png</file>
+        <file>build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/resources/assets/Playlisty.png</file>
+    </qresource>
+</RCC>
