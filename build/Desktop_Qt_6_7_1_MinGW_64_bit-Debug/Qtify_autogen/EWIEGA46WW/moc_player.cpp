@@ -42,7 +42,8 @@ constexpr auto qt_meta_stringdata_CLASSPlayerENDCLASS = QtMocHelpers::stringData
     "onNextButtonClick",
     "onPrevButtonClick",
     "onVolumeChange",
-    "onProgressChange"
+    "onProgressChange",
+    "value"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -67,14 +68,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSPlayerENDCLASS[] = {
        3,    0,   45,    2, 0x0a,    2 /* Public */,
        4,    0,   46,    2, 0x0a,    3 /* Public */,
        5,    0,   47,    2, 0x0a,    4 /* Public */,
-       6,    0,   48,    2, 0x0a,    5 /* Public */,
+       6,    1,   48,    2, 0x0a,    5 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    7,
 
        0        // eod
 };
@@ -97,7 +98,8 @@ Q_CONSTINIT const QMetaObject Player::staticMetaObject = { {
         // method 'onVolumeChange'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onProgressChange'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -112,11 +114,10 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->onNextButtonClick(); break;
         case 2: _t->onPrevButtonClick(); break;
         case 3: _t->onVolumeChange(); break;
-        case 4: _t->onProgressChange(); break;
+        case 4: _t->onProgressChange((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *Player::metaObject() const

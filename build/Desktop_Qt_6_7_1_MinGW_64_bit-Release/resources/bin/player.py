@@ -1,36 +1,88 @@
-import threading
+import pygame
 import time
-from pydub import AudioSegment
-from pydub.playback import play
+import threading
 import sys
-import os
 
-def counter(audioLen, startS):
-    count = startS
-    while True:
-        print(count)
+pygame.mixer.init()
+
+PATH = "resources/music/"
+PATH_DEBUG = "../music/"
+
+timerElapsed = 0
+duration = 10000
+
+state = True
+
+def timer():
+    global timerElapsed
+    while state:
         time.sleep(1)
-        count += 1
-        if count >= audioLen:
+        if pygame.mixer.music.get_busy():
+            timerElapsed += 1
+
+def start(time, volume):
+    global timerElapsed
+    timerElapsed = time
+    pygame.mixer.music.play(start=time)
+    pygame.mixer.music.set_volume(volume / 100)
+
+def play():
+    pygame.mixer.music.unpause()
+
+def pause():
+    if pygame.mixer.music.get_busy():
+        pygame.mixer.music.pause()
+
+def skip(time):
+    global timerElapsed
+    try:
+        timerElapsed = time
+        pygame.mixer.music.set_pos(time)
+    except:
+        pass
+
+def volume(volume):
+    pygame.mixer.music.set_volume(volume / 100)
+
+def stop():
+    pygame.mixer.music.stop()
+
+def load(id):
+    pygame.mixer.music.load(PATH + id + ".mp3")
+
+def command():
+    global state
+    global duration
+    command = input()
+    if command == "PLAY":
+        play()
+    elif command == "PAUSE":
+        pause()
+    elif command == "STOP":
+        stop()
+    elif command == "SKIP":
+        skip(int(input()))
+    elif command == "VOLUME":
+        volume(int(input()))
+    elif command == "LOAD":
+        stop()
+        load(input())
+        start(int(input()), int(input()))
+        duration = int(input())
+    elif command == "TIME":
+        if timerElapsed >= duration:
             print("END")
-            break
+        else:
+            print(timerElapsed)
+    elif command == "EXIT":
+        stop()
+        state = False
+        sys.exit()
 
-def checker():
+def main():
+    threading.Thread(target=timer).start()
     while True:
-        if input() == "STOP":
-            os._exit(0)
+        command()
 
-def playMusic(file, startS):
-    audio = AudioSegment.from_file(file)
-    audioLen = audio.duration_seconds
-    counter_thread = threading.Thread(target=counter, args=(audioLen,startS), daemon=True)
-    checker_thread = threading.Thread(target=checker, daemon=True)
-    checker_thread.start()
-    counter_thread.start()
-    play(audio[startS*1000:])
-    counter_thread.join()
-
-try:
-    playMusic("resources/music/" + sys.argv[1] + ".mp4", int(sys.argv[2]))
-except:
-    print("ERROR")
+if __name__ == "__main__":
+    main()

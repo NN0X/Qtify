@@ -13,6 +13,7 @@
 #include <QtConcurrent/QtConcurrent>
 #include <QThread>
 #include <QElapsedTimer>
+#include <QRegularExpression>
 
 #include <vector>
 
@@ -22,9 +23,8 @@ class Player : public QObject
 {
     Q_OBJECT
 private:
-    Song *previousSong;
-    Song *currentSong;
-    Song *nextSong;
+    std::vector<Song *> songs;
+    int currentSong;
     QProcess *playerProcess;
 
 public:
@@ -32,8 +32,8 @@ public:
     QPushButton *playButton;
     QPushButton *nextButton;
     QPushButton *prevButton;
-    QSlider *volume;
-    QSlider *progress;
+    QSlider *volumeBar;
+    QSlider *progressBar;
     QLabel *songTitle;
     QLabel *songTime;
     QLabel *songDuration;
@@ -41,21 +41,25 @@ public:
     Player(QWidget *parent);
     ~Player();
 
-    void loadSong(QString id);
+    void init();
+
+    void load(QString id);
 
     void play();
     void pause();
     void next();
     void prev();
 
-    void updateProgress();
+    void stop();
+
+    void update();
 
 public slots:
     void onPlayButtonClick();
     void onNextButtonClick();
     void onPrevButtonClick();
     void onVolumeChange();
-    void onProgressChange();
+    void onProgressChange(int value);
 };
 
 #endif // PLAYER_H

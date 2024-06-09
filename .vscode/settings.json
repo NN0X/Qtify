@@ -8,6 +8,9 @@
     "deque": "cpp",
     "string": "cpp",
     "unordered_map": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "new": "cpp",
+    "optional": "cpp",
+    "system_error": "cpp"
   }
 }

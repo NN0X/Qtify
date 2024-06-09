@@ -35,6 +35,7 @@ D:/Dev/Qtify/player.h
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QMutex
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QObject
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QProcess
+ mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QString
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList
  mdp:D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream
@@ -2065,9 +2066,9 @@ D:/Dev/Qtify/yt.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
+D:/Dev/Qtify/song.cpp
 D:/Dev/Qtify/player.cpp
 D:/Dev/Qtify/mainwindow.cpp
  uic:./ui_mainwindow.h
 D:/Dev/Qtify/main.cpp
 D:/Dev/Qtify/yt.cpp
-D:/Dev/Qtify/song.cpp

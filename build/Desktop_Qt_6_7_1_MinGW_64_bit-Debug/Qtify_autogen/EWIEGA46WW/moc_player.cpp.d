@@ -31,6 +31,7 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/EWIEGA46WW/
   D:/Qt/6.7.1/mingw_64/include/QtCore/QMutex \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QObject \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QProcess \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \

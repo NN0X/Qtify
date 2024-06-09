@@ -1,5 +1,6 @@
 D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/EWIEGA46WW/moc_player.cpp: D:/Dev/Qtify/player.h \
   D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/moc_predefs.h \
+  D:/Dev/Qtify/song.h \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/QtConcurrent \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/QtConcurrentDepends \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtaskbuilder.h \
@@ -21,6 +22,8 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/EWIEGA46W
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentthreadengine.h \
   D:/Qt/6.7.1/mingw_64/include/QtConcurrent/qtconcurrentversion.h \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QDeadlineTimer \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QDebug \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QElapsedTimer \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QFile \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QHash \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QList \
@@ -28,6 +31,7 @@ D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/Qtify_autogen/EWIEGA46W
   D:/Qt/6.7.1/mingw_64/include/QtCore/QMutex \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QObject \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QProcess \
+  D:/Qt/6.7.1/mingw_64/include/QtCore/QRegularExpression \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QStringList \
   D:/Qt/6.7.1/mingw_64/include/QtCore/QTextStream \

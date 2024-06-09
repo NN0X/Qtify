@@ -15,8 +15,8 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(player->playButton);
     layout->addWidget(player->nextButton);
     layout->addWidget(player->prevButton);
-    layout->addWidget(player->volume);
-    layout->addWidget(player->progress);
+    layout->addWidget(player->volumeBar);
+    layout->addWidget(player->progressBar);
     layout->addWidget(player->songTitle);
     layout->addWidget(player->songTime);
     layout->addWidget(player->songDuration);
