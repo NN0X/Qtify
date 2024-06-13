@@ -26,14 +26,16 @@ MainWindow::MainWindow(QWidget *parent)
 
 
    // QToolBar *PlayerToolBar = new QToolBar(this);
+    ui->PlayerToolBar->addWidget(player->prevButton);
     ui->PlayerToolBar->addWidget(player->playButton);
     ui->PlayerToolBar->addWidget(player->nextButton);
-    ui->PlayerToolBar->addWidget(player->prevButton);
-    ui->PlayerToolBar->addWidget(player->volumeBar);
-    ui->PlayerToolBar->addWidget(player->progressBar);
-    ui->PlayerToolBar->addWidget(player->songTitle);
-    ui->PlayerToolBar->addWidget(player->songTime);
+     ui->PlayerToolBar->addWidget(player->songTime);
     ui->PlayerToolBar->addWidget(player->songDuration);
+    ui->PlayerToolBar->addWidget(player->progressBar);
+    ui->PlayerToolBar->addWidget(player->volumeBar);
+    ui->PlayerToolBar->addWidget(player->songTitle);
+
+
 
     // Main button
     QPushButton *openMenuButton = new QPushButton("Main", this);
@@ -142,7 +144,7 @@ void MainWindow::OpenPlayerMenu()
         delete item;
     }
 
-    player = new class Player(this);
+   // player = new class Player(this);
     layout->addWidget(player);
     ui->centralwidget->setLayout(layout);
 }

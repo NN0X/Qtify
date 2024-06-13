@@ -154,15 +154,15 @@ Player::~Player()
         QByteArray data("EXIT\n");
         //playerProcess->write(data);
         playerProcess->terminate();
-        playerProcess->waitForFinished();
-        //delete playerProcess;
+        //playerProcess->waitForFinished();
+        delete playerProcess;
     }
 
     for (Song *song : songs)
     {
         delete song;
     }
-
+/*
     delete playButton;
     delete nextButton;
     delete prevButton;
@@ -172,6 +172,7 @@ Player::~Player()
     delete songTitle;
     delete songTime;
     delete songDuration;
+*/
 }
 
 void Player::init()
@@ -183,22 +184,19 @@ void Player::setupUI()
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    QVBoxLayout *leftLayout = new QVBoxLayout();
+    QHBoxLayout *leftLayout = new QHBoxLayout();
     leftLayout->addWidget(playlistList);
 
-    QVBoxLayout *centerLayout = new QVBoxLayout();
+    QHBoxLayout *centerLayout = new QHBoxLayout();
     leftLayout->addWidget(songList);
 
-    QHBoxLayout *contentLayout = new QHBoxLayout();
-    contentLayout->addLayout(leftLayout);
-    contentLayout->addLayout(centerLayout);
-
-    mainLayout->addLayout(contentLayout);
+    mainLayout->addLayout(leftLayout);
+    mainLayout->addLayout(centerLayout);
     setLayout(mainLayout);
 }
 void Player::load(QString id)
 {
-    songs.push_back(new Song(id));
+   // songs.push_back(new Song(id));
     currentSong = songs.size() - 1;
 
     songTitle->setText(songs[currentSong]->getTitle());
