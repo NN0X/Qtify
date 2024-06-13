@@ -13,6 +13,9 @@
 #include <QAbstractItemView>
 #include <QRegularExpression>
 
+#include "player.h"
+#include "mainwindow.h"
+
 const QString RESOURCES_PATH = "resources";
 
 class SearchMusicYT : public QObject

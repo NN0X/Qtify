@@ -30,6 +30,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         PlaylistSubmenu.cpp
         PlaylistSubMenu.ui
         resources.qrc
+        player.h
+        player.cpp
+        song.cpp song.h
 
 
 

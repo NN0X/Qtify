@@ -5,22 +5,10 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QInputDialog>
-
-
-
 playlistloader::playlistloader(QWidget *parent)
     : QWidget(parent)
 {
     initUI();
-   /* parent->setStyleSheet(
-        "QWidget {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0  #1A1A1A);"
-        "    color: white;"
-        "    border: 2px solid #4CAF50;"
-        "    padding: 0px 0px;"
-        "}"
-        );*/
     loadPlaylists();
 }
 

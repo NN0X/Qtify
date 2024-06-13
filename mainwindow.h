@@ -1,18 +1,19 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QDir>
 #include <QMainWindow>
 #include <QVBoxLayout>
 
 #include "yt.h"
 #include "PlaylistSubmenu.h"
+#include "player.h"
 
+class SearchMusicYT;
 
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
-    class MainWindow;
+class MainWindow;
 }
 QT_END_NAMESPACE
 
@@ -23,18 +24,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    Player *player;
 
 
 private:
     Ui::MainWindow *ui;
     QVBoxLayout *layout;
-
-    SearchMusicYT *searchMusicYT;
+    SearchMusicYT  *searchMusicYT;
     playlistloader *playlistloader;
 
 private slots:
-
+    void OpenMenu();
     void OpenPlaylistSubMenu();
-
+    void OpenPlayerMenu();
 };
 #endif // MAINWINDOW_H
