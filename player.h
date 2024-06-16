@@ -19,20 +19,17 @@
 #include <qmessagebox.h>
 
 #include <vector>
-
 #include "qlistwidget.h"
 #include "song.h"
 
 class Player : public QWidget
 {
     Q_OBJECT
-private:
-    std::vector<Song *> songs;
-    int currentSong;
-    QProcess *playerProcess;
 
 public:
+    std::vector<Song *> songs;
     QWidget *parent;
+    QProcess *playerProcess;
     QPushButton *playButton;
     QPushButton *nextButton;
     QPushButton *prevButton;
@@ -41,17 +38,14 @@ public:
     QLabel *songTitle;
     QLabel *songTime;
     QLabel *songDuration;
-    QListWidget *songList;
-    QListWidget *playlistList;
-    QString playlistName;
+    int currentSong;
+    void loadplaylist(QListWidgetItem *item, const QString &playlistName);
 
     Player(QWidget *parent);
     ~Player();
-
+    void initPlayerToolbox();
     void init();
-    void setupUI();
-
-    void load(QString id);
+    void load(QString id,int SongNr);
 
     void play();
     void pause();
@@ -68,8 +62,5 @@ public slots:
     void onPrevButtonClick();
     void onVolumeChange();
     void onProgressChange(int value);
-    void loadPlaylists();
-    void displaySongsInPlaylist(QListWidgetItem *item);
-    void onsongselected(QListWidgetItem *item);
 };
 #endif // PLAYER_H

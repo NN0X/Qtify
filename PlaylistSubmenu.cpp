@@ -14,26 +14,18 @@ playlistloader::playlistloader(QWidget *parent)
 
 void playlistloader::initUI()
 {
+    QString ListsDesing=
+                          "QListWidget {"
+                          "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                          "        stop:0  #1A1A1A);"
+                          "    color: white;"
+                          "    border: 2px solid #4CAF50;"
+                          "    padding: 0px 0px;"
+                          "}";
     fileList = new QListWidget();
-    fileList->setStyleSheet(
-        "QListWidget {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0  #1A1A1A);"
-        "    color: white;"
-        "    border: 2px solid #4CAF50;"
-        "    padding: 0px 0px;"
-        "}"
-        );
+    fileList->setStyleSheet(ListsDesing);
     fileContent = new QListWidget();
-    fileContent->setStyleSheet(
-    "QListWidget {"
-    "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-    "        stop:0  #1A1A1A);"
-    "    color: white;"
-    "    border: 2px solid #4CAF50;"
-    "    padding: 0px 0px;"
-    "}"
-    );
+    fileContent->setStyleSheet(ListsDesing);
     fileContent->setSelectionMode(QAbstractItemView::SingleSelection);
 
     connect(fileList, &QListWidget::itemClicked, this, &playlistloader::displayFileContent);
@@ -45,70 +37,34 @@ void playlistloader::initUI()
     QVBoxLayout *rightLayout = new QVBoxLayout();
     rightLayout->addWidget(fileList);
 
+    QString PlaylistButtonsDesing=        "QPushButton {"
+                                    "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                    "        stop:0 #011517, stop:1 #011519);"
+                                    "    color: white;"
+                                    "    border: 2px solid #4CAF50;"
+                                    "    padding: 10px 20px;"
+                                    "}"
+                                    "QPushButton:hover {"
+                                    "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                    "        stop:0 #42a658);"
+                                    "}"
+                                    "QPushButton:pressed {"
+                                    "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+                                    "        stop:0 #289042);"                                     "}";
+
     newPlaylistButton = new QPushButton("New Playlist", this);
-    newPlaylistButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);" // Gradient od zielonego do ciemnozielonego
-        "    color: white;"                        // Biały kolor tekstu
-        "    border: 2px solid #4CAF50;"           // Zielona ramka
-        //"    border-radius: 10px;"                 // Zaokrąglone rogi
-        "    padding: 10px 20px;"                  // Wewnętrzne odstępy
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);" // Jaśniejszy zielony na hover
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);" // Ciemniejszy zielony na kliknięcie
-        "}"
-        );
+    newPlaylistButton->setStyleSheet(PlaylistButtonsDesing);
     rightLayout->addWidget(newPlaylistButton);
     connect(newPlaylistButton, &QPushButton::clicked, this, &playlistloader::createNewPlaylist);
 
     deletePlaylistButton = new QPushButton("Delete Playlist", this);
-    deletePlaylistButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);" // Gradient od zielonego do ciemnozielonego
-        "    color: white;"                        // Biały kolor tekstu
-        "    border: 2px solid #4CAF50;"           // Zielona ramka
-        //"    border-radius: 10px;"                 // Zaokrąglone rogi
-        "    padding: 10px 20px;"                  // Wewnętrzne odstępy
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);" // Jaśniejszy zielony na hover
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);" // Ciemniejszy zielony na kliknięcie
-        "}"
-        );
+    deletePlaylistButton->setStyleSheet(PlaylistButtonsDesing);
     rightLayout->addWidget(deletePlaylistButton);
     connect(deletePlaylistButton, &QPushButton::clicked, this, &playlistloader::deleteSelectedPlaylist);
 
 
     addButton = new QPushButton("+", this);
-    addButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);" // Gradient od zielonego do ciemnozielonego
-        "    color: white;"                        // Biały kolor tekstu
-        "    border: 2px solid #4CAF50;"           // Zielona ramka
-        //"    border-radius: 10px;"                 // Zaokrąglone rogi
-        "    padding: 10px 20px;"                  // Wewnętrzne odstępy
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);" // Jaśniejszy zielony na hover
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);" // Ciemniejszy zielony na kliknięcie
-        "}"
-        );
+    addButton->setStyleSheet(PlaylistButtonsDesing);
     leftLayout->addWidget(addButton);
     connect(addButton, &QPushButton::clicked, this, &playlistloader::openListFile);
 

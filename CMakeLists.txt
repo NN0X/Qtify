@@ -33,6 +33,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         player.h
         player.cpp
         song.cpp song.h
+        PlayerMenu.h
+        PlayerMenu.cpp
 
 
 

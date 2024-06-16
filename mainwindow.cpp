@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -14,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(searchMusicYT->songList);
 
     player = new Player(this);
-
+    //player->initPlayerToolbox();
     ui->setupUi(this);
     ui->centralwidget->setLayout(layout);
     QLabel *logoLabel = new QLabel(this);
@@ -24,80 +23,40 @@ MainWindow::MainWindow(QWidget *parent)
     logoLabel->setAlignment(Qt::AlignCenter);
     ui->toolBar->addWidget(logoLabel);
 
-
-   // QToolBar *PlayerToolBar = new QToolBar(this);
     ui->PlayerToolBar->addWidget(player->prevButton);
     ui->PlayerToolBar->addWidget(player->playButton);
     ui->PlayerToolBar->addWidget(player->nextButton);
-     ui->PlayerToolBar->addWidget(player->songTime);
+    ui->PlayerToolBar->addWidget(player->songTime);
     ui->PlayerToolBar->addWidget(player->songDuration);
     ui->PlayerToolBar->addWidget(player->progressBar);
     ui->PlayerToolBar->addWidget(player->volumeBar);
     ui->PlayerToolBar->addWidget(player->songTitle);
 
+    QString defaultbuttonlayout=
+        "QPushButton {"
+        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+        "        stop:0 #011517, stop:1 #011519);"
+        "    color: white;"
+        "    border: 2px solid #4CAF50;"
+        "    padding: 10px 20px;"
+        "}"
+        "QPushButton:hover {"
+        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+        "        stop:0 #42a658);"
+        "}"
+        "QPushButton:pressed {"
+        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+        "        stop:0 #289042);"
+        "}";
 
-
-    // Main button
     QPushButton *openMenuButton = new QPushButton("Main", this);
-    openMenuButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);"
-        "    color: white;"
-        "    border: 2px solid #4CAF50;"
-        "    padding: 10px 20px;"
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);"
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);"
-        "}"
-        );
+    openMenuButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openMenuButton);
-
-    // Player button
     QPushButton *openPlayerButton = new QPushButton("Player", this);
-    openPlayerButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);"
-        "    color: white;"
-        "    border: 2px solid #4CAF50;"
-        "    padding: 10px 20px;"
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);"
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);"
-        "}"
-        );
+    openPlayerButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openPlayerButton);
-
-    // Playlist button
     QPushButton *openPlaylistSubMenuButton = new QPushButton("Playlisty", this);
-    openPlaylistSubMenuButton->setStyleSheet(
-        "QPushButton {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #011517, stop:1 #011519);"
-        "    color: white;"
-        "    border: 2px solid #4CAF50;"
-        "    padding: 10px 20px;"
-        "}"
-        "QPushButton:hover {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #42a658);"
-        "}"
-        "QPushButton:pressed {"
-        "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-        "        stop:0 #289042);"
-        "}"
-        );
+    openPlaylistSubMenuButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openPlaylistSubMenuButton);
 
     connect(openMenuButton, &QPushButton::clicked, this, &MainWindow::OpenMenu);
@@ -136,7 +95,6 @@ void MainWindow::OpenPlaylistSubMenu()
 
 void MainWindow::OpenPlayerMenu()
 {
-
     QLayoutItem *item;
     while ((item = layout->takeAt(0)) != nullptr)
     {
@@ -144,8 +102,8 @@ void MainWindow::OpenPlayerMenu()
         delete item;
     }
 
-   // player = new class Player(this);
-    layout->addWidget(player);
+    playerMenu = new PlayerMenu(this, player);
+    layout->addWidget(playerMenu);
     ui->centralwidget->setLayout(layout);
 }
 
@@ -154,6 +112,26 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete layout;
-    delete searchMusicYT;
+    //delete searchMusicYT;
+    if (player->playerProcess != nullptr)
+    {
+        QByteArray data("EXIT\n");
+        player->playerProcess->write(data);
+        player->playerProcess->waitForFinished();
+        delete player->playerProcess;
+    }
+
+    for (Song *song : player->songs)
+    {
+        delete song;
+    }
+    delete player->playButton;
+    delete player->nextButton;
+    delete player->prevButton;
+    delete player->volumeBar;
+    delete player->progressBar;
+    delete player->songTitle;
+    delete player->songTime;
+    delete player->songDuration;
     delete player;
 }

@@ -135,7 +135,9 @@ void SearchMusicYT::onSongListDoubleClick(QListWidgetItem *item)
 {
     if (isAlreadyDownloaded(songsFoundIDs[songsFoundTitles.indexOf(item->text())]))
     {
-        qobject_cast<MainWindow *>(parent)->player->load(songsFoundIDs[songsFoundTitles.indexOf(item->text())]);
+        //songList->clear();
+        qobject_cast<MainWindow *>(parent)->player->songs.push_back(new Song(songsFoundIDs[songsFoundTitles.indexOf(item->text())]));
+        qobject_cast<MainWindow *>(parent)->player->load(songsFoundIDs[songsFoundTitles.indexOf(item->text())],-1);
         qDebug()<<"zaladowano: "<<songsFoundIDs[songsFoundTitles.indexOf(item->text())]<<"/n";
         return;
     }
@@ -150,7 +152,6 @@ void SearchMusicYT::onSongListDoubleClick(QListWidgetItem *item)
 
     QtConcurrent::run([this, id]
                       { SearchMusicYT::download(id); });
-
     songsDownloadingIDs.append(id);
     updateSongList(true);
 }

@@ -7,6 +7,7 @@
 #include "yt.h"
 #include "PlaylistSubmenu.h"
 #include "player.h"
+#include "PlayerMenu.h"
 
 class SearchMusicYT;
 
@@ -25,6 +26,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     Player *player;
+    PlayerMenu *playerMenu;
 
 
 private:
