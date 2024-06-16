@@ -1,4 +1,4 @@
-﻿#ifndef SONG_H
+a#ifndef SONG_H
 #define SONG_H
 
 #include <QString>

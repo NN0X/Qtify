@@ -1,4 +1,4 @@
-﻿#include "player.h"
+#include "player.h"
 #include "mainwindow.h"
 
 Player::Player(QWidget *parent)

@@ -1,4 +1,4 @@
-﻿#ifndef PLAYER_H
+#ifndef PLAYER_H
 #define PLAYER_H
 
 #include <QWidget>

@@ -1,4 +1,4 @@
-﻿#include "yt.h"
+#include "yt.h"
 
 SearchMusicYT::SearchMusicYT(QMainWindow *parent)
     : songList(new QListWidget(parent)), parent(parent), searchTerm(new QLineEdit()),
@@ -152,6 +152,7 @@ void SearchMusicYT::onSongListDoubleClick(QListWidgetItem *item)
 
     QtConcurrent::run([this, id]
                       { SearchMusicYT::download(id); });
+
     songsDownloadingIDs.append(id);
     updateSongList(true);
 }

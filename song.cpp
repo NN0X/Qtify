@@ -1,4 +1,4 @@
-﻿#include "song.h"
+#include "song.h"
 
 Song::Song()
     : id("0"), title("Unknown"), time(0), duration(__UINT16_MAX__)

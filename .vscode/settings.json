@@ -1,3 +1,16 @@
 {
-    "C_Cpp.errorSquiggles": "disabled"
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "string_view": "cpp",
+    "compare": "cpp",
+    "cstdint": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "new": "cpp",
+    "optional": "cpp",
+    "system_error": "cpp"
+  }
 }
