@@ -17,7 +17,7 @@ Song::~Song()
 
 void Song::load(QString id)
 {
-    QFile file("resources/music/list.txt");
+    QFile file("resources/music/all songs.txt");
     if (!file.open(QIODevice::ReadOnly))
     {
         qDebug() << "Could not open file";

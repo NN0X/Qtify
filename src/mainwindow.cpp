@@ -23,15 +23,14 @@ MainWindow::MainWindow(QWidget *parent)
     logoLabel->setAlignment(Qt::AlignCenter);
     ui->toolBar->addWidget(logoLabel);
 
+    ui->PlayerToolBar->addWidget(player->progressBar);
     ui->PlayerToolBar->addWidget(player->prevButton);
     ui->PlayerToolBar->addWidget(player->playButton);
     ui->PlayerToolBar->addWidget(player->nextButton);
+    ui->PlayerToolBar->addWidget(player->songTitle);
     ui->PlayerToolBar->addWidget(player->songTime);
     ui->PlayerToolBar->addWidget(player->songDuration);
-    ui->PlayerToolBar->addWidget(player->progressBar);
     ui->PlayerToolBar->addWidget(player->volumeBar);
-    ui->PlayerToolBar->addWidget(player->songTitle);
-
     QString defaultbuttonlayout=
         "QPushButton {"
         "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
@@ -49,13 +48,13 @@ MainWindow::MainWindow(QWidget *parent)
         "        stop:0 #289042);"
         "}";
 
-    QPushButton *openMenuButton = new QPushButton("Main", this);
+    QPushButton *openMenuButton = new QPushButton("Find Songs", this);
     openMenuButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openMenuButton);
-    QPushButton *openPlayerButton = new QPushButton("Player", this);
+    QPushButton *openPlayerButton = new QPushButton("Play Songs", this);
     openPlayerButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openPlayerButton);
-    QPushButton *openPlaylistSubMenuButton = new QPushButton("Playlisty", this);
+    QPushButton *openPlaylistSubMenuButton = new QPushButton("Manage Playlists", this);
     openPlaylistSubMenuButton->setStyleSheet(defaultbuttonlayout);
     ui->toolBar->addWidget(openPlaylistSubMenuButton);
 
@@ -112,7 +111,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete layout;
-    //delete searchMusicYT;
     if (player->playerProcess != nullptr)
     {
         QByteArray data("EXIT\n");

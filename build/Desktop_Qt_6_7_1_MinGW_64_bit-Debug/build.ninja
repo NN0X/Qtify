@@ -245,7 +245,7 @@ build Qtify_autogen_timestamp_deps: phony CMakeFiles/Qtify_autogen_timestamp_dep
 #############################################
 # Utility command for Qtify_autogen
 
-build Qtify_autogen: phony CMakeFiles/Qtify_autogen Qtify_autogen/include/ui/ui_main_menu.h Qtify_autogen/include/ui/ui_mainwindow.h Qtify_autogen/include/ui/ui_MenuWindow.h Qtify_autogen/include/ui/ui_PlaylistSubMenu.h Qtify_autogen/timestamp Qtify_autogen/mocs_compilation.cpp Qtify_autogen_timestamp_deps
+build Qtify_autogen: phony CMakeFiles/Qtify_autogen Qtify_autogen/include/ui/ui_mainwindow.h Qtify_autogen/timestamp Qtify_autogen/mocs_compilation.cpp Qtify_autogen_timestamp_deps
 
 
 #############################################
@@ -270,13 +270,13 @@ build Qtify_autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir}Qtify_a
 #############################################
 # Phony custom command for CMakeFiles\Qtify_autogen_timestamp_deps
 
-build CMakeFiles/Qtify_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Qtify_autogen_timestamp_deps: phony D$:/Qt/6.7.1/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.7.1/mingw_64/lib/libQt6Core.a D$:/Qt/6.7.1/mingw_64/./bin/moc.exe D$:/Qt/6.7.1/mingw_64/./bin/uic.exe
+build CMakeFiles/Qtify_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Qtify_autogen_timestamp_deps: phony D$:/Qt/6.7.1/mingw_64/lib/libQt6Core.a D$:/Qt/6.7.1/mingw_64/lib/libQt6Widgets.a D$:/Qt/6.7.1/mingw_64/./bin/moc.exe D$:/Qt/6.7.1/mingw_64/./bin/uic.exe
 
 
 #############################################
 # Phony custom command for CMakeFiles\Qtify_autogen
 
-build CMakeFiles/Qtify_autogen Qtify_autogen/include/ui/ui_main_menu.h Qtify_autogen/include/ui/ui_mainwindow.h Qtify_autogen/include/ui/ui_MenuWindow.h Qtify_autogen/include/ui/ui_PlaylistSubMenu.h | ${cmake_ninja_workdir}CMakeFiles/Qtify_autogen ${cmake_ninja_workdir}Qtify_autogen/include/ui/ui_main_menu.h ${cmake_ninja_workdir}Qtify_autogen/include/ui/ui_mainwindow.h ${cmake_ninja_workdir}Qtify_autogen/include/ui/ui_MenuWindow.h ${cmake_ninja_workdir}Qtify_autogen/include/ui/ui_PlaylistSubMenu.h: phony Qtify_autogen/timestamp || Qtify_autogen_timestamp_deps
+build CMakeFiles/Qtify_autogen Qtify_autogen/include/ui/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/Qtify_autogen ${cmake_ninja_workdir}Qtify_autogen/include/ui/ui_mainwindow.h: phony Qtify_autogen/timestamp || Qtify_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

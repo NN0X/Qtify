@@ -131,7 +131,7 @@ void playlistloader::displayFileContent(QListWidgetItem *item)
 
 void playlistloader::openListFile()
 {
-    QString filename = "resources/music/list.txt";
+    QString filename = "resources/music/all songs.txt";
     QFile file(filename);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
