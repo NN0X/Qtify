@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-1396a091b031577828ce.json",
+					"jsonFile" : "directory-.-Release-1396a091b031577828ce.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -22,7 +22,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -44,21 +44,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Qtify::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qtify-Debug-66c052b687073a2ce175.json",
+					"jsonFile" : "target-Qtify-Release-01a6126eec2683162d03.json",
 					"name" : "Qtify",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Qtify_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qtify_autogen-Debug-aace56290be3344d96a7.json",
+					"jsonFile" : "target-Qtify_autogen-Release-1bfad50cd70f2300897e.json",
 					"name" : "Qtify_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Qtify_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qtify_autogen_timestamp_deps-Debug-eb2a14326284116f3827.json",
+					"jsonFile" : "target-Qtify_autogen_timestamp_deps-Release-78dadf513c3cd36aac55.json",
 					"name" : "Qtify_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-		"source" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes"
+		"build" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release",
+		"source" : "D:/Dev/Qtify"
 	},
 	"version" : 
 	{

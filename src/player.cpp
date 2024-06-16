@@ -229,6 +229,11 @@ void Player::onVolumeChange()
 
 void Player::onProgressChange(int value)
 {
+    if (currentSong == -1)
+    {
+        progressBar->setValue(0);
+        return;
+    }
     int time = value * songs[currentSong]->getDuration() / 100;
 
     QByteArray data("SKIP\n" + QByteArray::number(time) + "\n");
