@@ -12,6 +12,9 @@
 #include <QtConcurrent/QtConcurrent>
 #include <QAbstractItemView>
 #include <QRegularExpression>
+#include <QInputDialog>
+#include "player.h"
+#include "mainwindow.h"
 
 #include "player.h"
 #include "mainwindow.h"
