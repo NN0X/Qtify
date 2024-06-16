@@ -1,22 +1,22 @@
 {
-	"BUILD_DIR" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen",
-	"CMAKE_BINARY_DIR" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Dev/Qtify",
-	"CMAKE_SOURCE_DIR" : "D:/Dev/Qtify",
-	"INCLUDE_DIR" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/include",
+	"BUILD_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes",
+	"CMAKE_SOURCE_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes",
+	"INCLUDE_DIR" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/Qtify_autogen/include",
 	"INPUTS" : 
 	[
-		"D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/resources/assets/logo.png"
+		"C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/resources/assets/logo.png"
 	],
-	"LOCK_FILE" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/Qtify_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"LOCK_FILE" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/Qtify_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
 	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
 	"OUTPUT_NAME" : "qrc_resources.cpp",
-	"RCC_EXECUTABLE" : "D:/Qt/6.7.1/mingw_64/./bin/rcc.exe",
+	"RCC_EXECUTABLE" : "C:/Qt/6.7.1/mingw_64/./bin/rcc.exe",
 	"RCC_LIST_OPTIONS" : [ "--list" ],
-	"SETTINGS_FILE" : "D:/Dev/Qtify/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/Qtify_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
-	"SOURCE" : "D:/Dev/Qtify/resources.qrc",
+	"SETTINGS_FILE" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/Qtify_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/Users/nikfi/Downloads/Qtify-cleanup-and-fixes/resources.qrc",
 	"VERBOSITY" : 0
 }

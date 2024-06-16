@@ -121,7 +121,7 @@ void SearchMusicYT::updateSongList(bool force)
         }
         else
         {
-            item->setForeground(Qt::black);
+            item->setForeground(Qt::white);
         }
         songList->addItem(item);
     }
@@ -183,7 +183,7 @@ void SearchMusicYT::download(QString id)
 
 void SearchMusicYT::addToDatabase(QString id, QString title)
 {
-    QFile file(RESOURCES_PATH + "/music/list.txt");
+    QFile file(RESOURCES_PATH + "/music/all songs.txt");
     if (!file.open(QIODevice::Append))
     {
         return;

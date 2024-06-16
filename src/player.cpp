@@ -32,11 +32,15 @@ void Player::initPlayerToolbox()
         ;
     playButton = new QPushButton("Play", parent);
     playButton->setStyleSheet(playerbuttondesing);
+    playButton->setFixedWidth(80);
+    playButton->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
     connect(playButton, &QPushButton::clicked, this, &Player::onPlayButtonClick);
     nextButton = new QPushButton("Next", parent);
+    nextButton->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
     nextButton->setStyleSheet(playerbuttondesing);
     connect(nextButton, &QPushButton::clicked, this, &Player::onNextButtonClick);
     prevButton = new QPushButton("Prev", parent);
+    prevButton->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
     prevButton->setStyleSheet(playerbuttondesing);
     connect(prevButton, &QPushButton::clicked, this, &Player::onPrevButtonClick);
 
@@ -51,10 +55,12 @@ void Player::initPlayerToolbox()
     volumeBar->setRange(0, 100);
     volumeBar->setValue(50);
     volumeBar->setStyleSheet("QSlider {"+LabelAndSliderDesing);
+    volumeBar->setFixedWidth(200);
     connect(volumeBar, &QSlider::valueChanged, this, &Player::onVolumeChange);
 
     progressBar = new QSlider(Qt::Horizontal, parent);
     progressBar->setStyleSheet("QSlider {"+LabelAndSliderDesing);
+    //progressBar->setFixedWidth(400);
     connect(progressBar, &QSlider::sliderMoved, this, &Player::onProgressChange);
 
     songTitle = new QLabel("Unknown", parent);

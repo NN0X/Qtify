@@ -55,7 +55,7 @@ void PlayerMenu::loadPlaylists() {
         //QMessageBox::warning(this, tr("Błąd odczytu"), tr("Nie można otworzyć pliku playlisty.txt"));
         return;
     }
-    playlistList->addItem("list");
+    playlistList->addItem("all songs");
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
