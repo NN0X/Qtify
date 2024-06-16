@@ -13,31 +13,31 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+    src/main.cpp
+    src/mainwindow.cpp
+    src/player.cpp
+    src/PlayerMenu.cpp
+    src/playlist.cpp
+    src/PlaylistSubmenu.cpp
+    src/song.cpp
+    src/yt.cpp
+
+    src/mainwindow.h
+    src/player.h
+    src/PlayerMenu.h
+    src/playlist.h
+    src/PlaylistSubmenu.h
+    src/song.h
+    src/yt.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Qtify
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        yt.cpp
-        yt.h
-
-        PlaylistSubmenu.h
-        PlaylistSubmenu.cpp
-        PlaylistSubMenu.ui
         resources.qrc
-        player.h
-        player.cpp
-        song.cpp song.h
-        PlayerMenu.h
-        PlayerMenu.cpp
-
-
-
+        ui/main_menu.ui ui/mainwindow.ui ui/MenuWindow.ui ui/PlaylistSubMenu.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Qtify APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
