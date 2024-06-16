@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Release-739c9e50b56896922718.json",
+					"jsonFile" : "directory-.-Release-1396a091b031577828ce.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Qtify::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qtify-Release-50a58dfcb9502f283597.json",
+					"jsonFile" : "target-Qtify-Release-ae033675c74028f3e954.json",
 					"name" : "Qtify",
 					"projectIndex" : 0
 				},

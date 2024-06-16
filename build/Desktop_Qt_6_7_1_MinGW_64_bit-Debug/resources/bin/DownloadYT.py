@@ -2,6 +2,7 @@ import sys
 from pytube import Search
 from pydub import AudioSegment
 import os
+import ffmpeg
 
 def download(id):
     search = Search(id)
