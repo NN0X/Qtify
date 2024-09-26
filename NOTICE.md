@@ -10,4 +10,4 @@ Software: Qtify
 
 License: Apache 2.0
 
-Licensor: NoX(ts.sarkowicz@gmail.com) nikfik(nikfik13@gmail.com)
+Licensor: NoX(nox@noxsoftware.pl) nikfik(nikfik13@gmail.com)
